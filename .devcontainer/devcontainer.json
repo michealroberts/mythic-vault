@@ -1,0 +1,58 @@
+{
+  "name": "Mythic Vault",
+  "image": "oven/bun:1-debian",
+  "forwardPorts": [
+    3000
+  ],
+  "portsAttributes": {
+    "3000": {
+      "label": "Nuxt",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "postCreateCommand": "[ -f package.json ] && bun install || true",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "typescript.tsdk": "node_modules/typescript/lib",
+        "[vue]": {
+          "editor.defaultFormatter": "biomejs.biome"
+        },
+        "[typescript]": {
+          "editor.defaultFormatter": "biomejs.biome"
+        },
+        "[javascript]": {
+          "editor.defaultFormatter": "biomejs.biome"
+        },
+        "[json]": {
+          "editor.defaultFormatter": "biomejs.biome"
+        },
+        "[jsonc]": {
+          "editor.defaultFormatter": "biomejs.biome"
+        },
+        "[css]": {
+          "editor.defaultFormatter": "biomejs.biome"
+        },
+        "editor.codeActionsOnSave": {
+          "quickfix.biome": "explicit",
+          "source.organizeImports.biome": "explicit"
+        },
+        "editor.formatOnSave": true,
+        "editor.insertSpaces": true,
+        "editor.tabSize": 1,
+        "explorer.fileNesting.enabled": true,
+        "explorer.fileNesting.patterns": {
+          "nuxt.config.*": "tsconfig.json",
+          "package.json": "bun.lock"
+        }
+      },
+      "extensions": [
+        "biomejs.biome",
+        "ms-vscode.vscode-typescript-next",
+        "nuxtr.nuxtr-vscode",
+        "Vue.volar"
+      ]
+    }
+  },
+  "remoteUser": "root"
+}
