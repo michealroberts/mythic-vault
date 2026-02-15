@@ -32,3 +32,13 @@ type BrandedId<T extends string> = string & {
 };
 
 /******************************************************************************/
+
+// Define branded ID types for each entity type.
+export type SetId = BrandedId<"SetId">;
+export type OracleId = BrandedId<"OracleId">;
+export type CardId = BrandedId<"CardId">;
+export type FaceId = BrandedId<"FaceId">;
+export type RulingId = BrandedId<"RulingId">;
+export type PriceId = BrandedId<"PriceId">;
+
+/******************************************************************************/
