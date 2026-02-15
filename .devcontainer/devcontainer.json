@@ -40,6 +40,11 @@
         "editor.formatOnSave": true,
         "editor.insertSpaces": true,
         "editor.tabSize": 1,
+        "editor.rulers": [
+          80,
+          90,
+          120
+        ],
         "explorer.fileNesting.enabled": true,
         "explorer.fileNesting.patterns": {
           "nuxt.config.*": "tsconfig.json",
