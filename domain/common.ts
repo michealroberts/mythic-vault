@@ -17,3 +17,8 @@ export const ID_PREFIXES = {
 } as const;
 
 /******************************************************************************/
+
+// Type for valid ID prefixes, derived from the keys of `ID_PREFIXES`.
+export type IdPrefix = (typeof ID_PREFIXES)[keyof typeof ID_PREFIXES];
+
+/******************************************************************************/
