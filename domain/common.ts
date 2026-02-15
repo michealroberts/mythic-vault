@@ -22,3 +22,13 @@ export const ID_PREFIXES = {
 export type IdPrefix = (typeof ID_PREFIXES)[keyof typeof ID_PREFIXES];
 
 /******************************************************************************/
+
+declare const __brand: unique symbol;
+
+/******************************************************************************/
+
+type BrandedId<T extends string> = string & {
+  readonly [__brand]: T;
+};
+
+/******************************************************************************/
