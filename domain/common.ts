@@ -5,6 +5,10 @@
 
 /******************************************************************************/
 
+import { ulid } from "ulidx";
+
+/******************************************************************************/
+
 // Define a constant object for ID prefixes to ensure consistency across the
 // codebase.
 export const ID_PREFIXES = {
@@ -40,5 +44,22 @@ export type CardId = BrandedId<"CardId">;
 export type FaceId = BrandedId<"FaceId">;
 export type RulingId = BrandedId<"RulingId">;
 export type PriceId = BrandedId<"PriceId">;
+
+/******************************************************************************/
+
+/**
+ * Generate a new prefixed ULID.
+ *
+ * @param prefix - The entity type prefix from `ID_PREFIXES`.
+ * @returns A string of the form `{prefix}_{ulid}`.
+ *
+ * @example
+ * ```ts
+ * const id = createId('card'); // "card_01JWTK8N9QZGX4F7V3HYP2MR6E"
+ * ```
+ */
+export function createId<P extends IdPrefix>(prefix: P): `${P}_${string}` {
+  return `${prefix}_${ulid()}`;
+}
 
 /******************************************************************************/
