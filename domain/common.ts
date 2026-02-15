@@ -63,3 +63,13 @@ export function createId<P extends IdPrefix>(prefix: P): `${P}_${string}` {
 }
 
 /******************************************************************************/
+
+// Factory functions for creating typed IDs with the appropriate prefixes.
+export const createSetId = () => createId(ID_PREFIXES.set) as SetId;
+export const createOracleId = () => createId(ID_PREFIXES.oracle) as OracleId;
+export const createCardId = () => createId(ID_PREFIXES.card) as CardId;
+export const createFaceId = () => createId(ID_PREFIXES.face) as FaceId;
+export const createRulingId = () => createId(ID_PREFIXES.ruling) as RulingId;
+export const createPriceId = () => createId(ID_PREFIXES.price) as PriceId;
+
+/******************************************************************************/
